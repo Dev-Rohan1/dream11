@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "name": "Virat Kohli",
+    "country": "India",
+    "player_type": "Batsman",
+    "rating": 9.5,
+    "hand": "Right-Hand-Bat",
+    "price": 20000,
+    "image": "https://tse1.mm.bing.net/th?id=OIP.Rx7j3ZPrFtb3aD0TPgozYAHaE8&pid=Api&P=0&h=220"
+  },
+  {
+    "id": 2,
+    "name": "Rohit Sharma",
+    "country": "India",
+    "player_type": "Batsman",
+    "rating": 9.5,
+    "hand": "Right-Hand-Bat",
+    "price": 30000,
+    "image": "https://tse1.mm.bing.net/th?id=OIP.1475JHHRNNemW7FoXJz-7wHaEK&pid=Api&P=0&h=220"
+  },
+  {
+    "id": 3,
+    "name": "Sakib Al Hasan",
+    "country": "Bangladesh",
+    "player_type": "All-Rounder",
+    "rating": 9.5,
+    "hand": "Left-Hand-Bat",
+    "price": 10000,
+    "image": "https://tse2.mm.bing.net/th?id=OIP.zQc4SfY-nouj2hAoHYhl1wHaFj&pid=Api&P=0&h=220"
+  },
+  {
+    "id": 4,
+    "name": "Musfikur Rahim",
+    "country": "Bangladesh",
+    "player_type": "Batsman",
+    "rating": 7.5,
+    "hand": "Right-Hand-Bat",
+    "price": 55000,
+    "image": "https://tse3.mm.bing.net/th?id=OIP.hQL8GXgRapjr0M5llHbclwHaEd&pid=Api&P=0&h=220"
+  },
+  {
+    "id": 5,
+    "name": "Hardik Pandya",
+    "country": "India",
+    "player_type": "All-Rounder",
+    "rating": 9.5,
+    "hand": "Right-Hand-Bat",
+    "price": 20000,
+    "image": "https://tse4.mm.bing.net/th?id=OIP.LDU1ZDVm35K2MjDWxwp_iAHaFf&pid=Api&P=0&h=220"
+  },
+  {
+    "id": 6,
+    "name": "Trent Boult",
+    "country": "New Nealand",
+    "player_type": "Bowler",
+    "rating": 8.0,
+    "hand": "Left-Hand-Bowler",
+    "price": 50000,
+    "image": "https://tse4.mm.bing.net/th?id=OIP.Iy6MDaZc9q8a2IOMIY8b_wHaFS&pid=Api&P=0&h=220"
+  },
+  {
+    "id": 7,
+    "name": "Lasik Malinga",
+    "country": "SriLanka",
+    "player_type": "Bowler",
+    "rating": 7.0,
+    "hand": "Right-Hand-Bat",
+    "price": 20000,
+    "image": "https://tse1.mm.bing.net/th?id=OIP.emS_xhUmqHsoXZN0xP-J3QHaIL&pid=Api&P=0&h=220"
+  }
+]
