@@ -349,3 +349,31 @@ footer {
   font-weight: 500;
   cursor: pointer;
 }
+
+.seleceted_player li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin-bottom: 20px;
+  border: 1.5px solid rgba(19, 19, 19, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.seleceted_player li:first-child {
+  margin-top: 20px;
+}
+
+.seleceted_player li img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.seleceted_player li .sinagle_player {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

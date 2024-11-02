@@ -3,15 +3,36 @@ import PlayerItem from "../data/PlayerData.json";
 import { FaRegUserCircle } from "react-icons/fa";
 import { FaFlag } from "react-icons/fa6";
 import { toast } from "react-toastify";
+import { FaTrash } from "react-icons/fa";
 
 const PlayerList = ({ count, setCount, coin }) => {
-  console.log(PlayerItem);
   const [player, setPlayer] = useState(true);
+  const [selecetPlayer, setSelectPlayer] = useState([]);
 
   const playerBtnClickHnadler = () => {
     setPlayer(!player);
   };
 
+  const playerCardHandler = (player) => {
+    if (coin > player.price && count < 7) {
+      toast.success("Player Add Successfully");
+    } else if (coin < player.price) {
+      toast.error("Not Insufficient Balance");
+    }
+
+    if (count === 7) {
+      toast.error("player full");
+    } else {
+      if (coin > player.price) {
+        count <= 6 ? setCount(count + 1) : setCount(7);
+      }
+    }
+
+    coin <= player.price
+      ? toast.error("Not Insufficient Balance")
+      : setSelectPlayer([...selecetPlayer, player]);
+  };
+  console.log(selecetPlayer);
   return (
     <section>
       <div className="container">
@@ -38,17 +59,10 @@ const PlayerList = ({ count, setCount, coin }) => {
         </div>
         {player ? (
           <>
-            {" "}
             <div className="player_list">
               {PlayerItem.map((player) => {
                 return (
-                  <div
-                    onClick={() =>
-                      count <= 6 ? setCount(count + 1) : setCount(7)
-                    }
-                    className="player_card"
-                    key={player.id}
-                  >
+                  <div className="player_card" key={player.id}>
                     <img src={player.image} alt="player" />
                     <h3>
                       <FaRegUserCircle />
@@ -99,11 +113,7 @@ const PlayerList = ({ count, setCount, coin }) => {
                         {player.price}
                       </p>
                       <button
-                        onClick={() =>
-                          coin > player.price
-                            ? toast.success("Player Add Successfully")
-                            : toast.error("Insufficient Balance")
-                        }
+                        onClick={() => playerCardHandler(player)}
                         style={{
                           background: "none",
                           border: "1px solid rgba(19, 19, 19, 0.1) ",
@@ -122,19 +132,37 @@ const PlayerList = ({ count, setCount, coin }) => {
             </div>
           </>
         ) : (
-          <button
-            onClick={() => setPlayer(!player)}
-            style={{
-              background: "rgb(231, 254, 41)",
-              padding: "10px 15px",
-              border: "0",
-              outline: "0",
-              borderRadius: "5px",
-              cursor: "pointer",
-            }}
-          >
-            Add More Player
-          </button>
+          <div>
+            <ul className="seleceted_player">
+              {selecetPlayer.map((player) => {
+                return (
+                  <li key={player.id}>
+                    <div className="sinagle_player">
+                      <img src={player.image} alt="" />
+                      <div>
+                        <b style={{ display: "block" }}>{player.name}</b>
+                        <span>{player.hand}</span>
+                      </div>
+                    </div>
+                    <FaTrash />
+                  </li>
+                );
+              })}
+            </ul>
+            <button
+              onClick={() => setPlayer(!player)}
+              style={{
+                background: "rgb(231, 254, 41)",
+                padding: "10px 15px",
+                border: "0",
+                outline: "0",
+                borderRadius: "5px",
+                cursor: "pointer",
+              }}
+            >
+              Add More Player
+            </button>
+          </div>
         )}
       </div>
     </section>
