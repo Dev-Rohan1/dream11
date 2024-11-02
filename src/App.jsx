@@ -12,7 +12,12 @@ const App = () => {
     <>
       <Navbar coin={coin} />
       <Hero coin={coin} setCoin={setCoin} />
-      <PlayerList count={count} setCount={setCount} coin={coin} />
+      <PlayerList
+        count={count}
+        setCount={setCount}
+        coin={coin}
+        setCoin={setCoin}
+      />
       <NewsLetter />
       <Footer />
     </>

@@ -5,7 +5,7 @@ import { FaFlag } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import { FaTrash } from "react-icons/fa";
 
-const PlayerList = ({ count, setCount, coin }) => {
+const PlayerList = ({ count, setCount, coin, setCoin }) => {
   const [player, setPlayer] = useState(true);
   const [selecetPlayer, setSelectPlayer] = useState([]);
 
@@ -13,7 +13,9 @@ const PlayerList = ({ count, setCount, coin }) => {
     setPlayer(!player);
   };
 
-  const playerCardHandler = (player) => {
+  const playerCardHandler = (player, price) => {
+    setCoin(coin - price);
+
     if (coin > player.price && count < 6) {
       toast.success("Player Add Successfully");
     } else if (coin < player.price) {
@@ -28,11 +30,14 @@ const PlayerList = ({ count, setCount, coin }) => {
       }
     }
 
-    coin <= player.price
-      ? toast.error("Not Insufficient Balance")
-      : setSelectPlayer([...selecetPlayer, player]);
+    if (coin <= player.price) {
+      toast.error("Not Insufficient Balance");
+      setCoin(coin);
+    } else {
+      setSelectPlayer([...selecetPlayer, player]);
+    }
   };
-  console.log(selecetPlayer);
+
   return (
     <section>
       <div className="container">
@@ -113,7 +118,7 @@ const PlayerList = ({ count, setCount, coin }) => {
                         {player.price}
                       </p>
                       <button
-                        onClick={() => playerCardHandler(player)}
+                        onClick={() => playerCardHandler(player, player.price)}
                         style={{
                           background: "none",
                           border: "1px solid rgba(19, 19, 19, 0.1) ",
