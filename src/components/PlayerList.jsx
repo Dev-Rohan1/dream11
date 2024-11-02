@@ -14,17 +14,17 @@ const PlayerList = ({ count, setCount, coin }) => {
   };
 
   const playerCardHandler = (player) => {
-    if (coin > player.price && count < 7) {
+    if (coin > player.price && count < 6) {
       toast.success("Player Add Successfully");
     } else if (coin < player.price) {
       toast.error("Not Insufficient Balance");
     }
 
-    if (count === 7) {
+    if (count === 6) {
       toast.error("player full");
     } else {
       if (coin > player.price) {
-        count <= 6 ? setCount(count + 1) : setCount(7);
+        count <= 5 ? setCount(count + 1) : setCount(6);
       }
     }
 
@@ -40,7 +40,7 @@ const PlayerList = ({ count, setCount, coin }) => {
           {player ? (
             <h1>Available Players</h1>
           ) : (
-            <h1>Selected Player {count}/7</h1>
+            <h1>Selected Player {count}/6</h1>
           )}
           <div className="available_btn">
             <span
